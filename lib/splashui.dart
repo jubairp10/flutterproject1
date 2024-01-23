@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 void main(){
-  r
+  runApp(MaterialApp(home: splash(),));
 }
 class splash extends StatelessWidget{
   @override

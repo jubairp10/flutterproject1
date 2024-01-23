@@ -10,7 +10,10 @@ class login extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.cyanAccent,title: Text('welcome'),centerTitle: true,),
-      body: Container(),
+      body: Container(
+
+
+      ),
     );
   }
 
