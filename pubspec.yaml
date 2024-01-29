@@ -39,6 +39,10 @@ dependencies:
   salomon_bottom_bar: ^3.3.2
   lottie:
   expansion_tile_card: ^3.0.0
+  introduction_screen: ^3.1.12
+  flutter_svg: ^2.0.9
+  carousel_slider: ^4.2.1
+  syncfusion_flutter_sliders: 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -71,6 +75,7 @@ flutter:
      - assets/icons/
      - assets/lottie/
      - assets/image/
+     - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
