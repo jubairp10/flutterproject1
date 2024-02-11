@@ -67,7 +67,6 @@ class _farmpageState extends State<farmpage> {
               children: [
 
                 Container(
-
                   child: Row(
                     children: [
 

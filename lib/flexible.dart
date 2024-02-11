@@ -45,7 +45,7 @@ class flexible extends StatelessWidget{
                       color: Colors.tealAccent,
                       borderRadius: BorderRadius.circular(20)
                   ),
-                  child: Text(),
+                  child: Text(''),
                 ),
               ),
             ],

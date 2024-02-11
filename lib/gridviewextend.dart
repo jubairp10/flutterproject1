@@ -9,7 +9,7 @@ class gridextend extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.extent(maxCrossAxisExtent: 50,children:
-        List.generate(8, (index){
+        List.generate(5, (index){
           return Card(
             child: Column(
               children: [
