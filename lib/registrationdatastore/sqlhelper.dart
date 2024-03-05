@@ -2,7 +2,7 @@ import 'package:sqflite/sqflite.dart' as sql;
 
 class SQLhelper {
   //create Table
-  static Future<void> createTable(sql.Database db) async {
+  static Future<void> createTable(sql.Database db) async {     
     await db.execute("""CREATE TABLE user(
        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
        name TEXT,
@@ -57,4 +57,29 @@ class SQLhelper {
     final db = await SQLhelper.OpenDb();
     db.delete('user', where: 'id = ?', whereArgs: [id]);
   }
+  static Future<void>createDataTable(sql.Database db)async{
+    await db.execute("""CREATE TABLE data(
+    id1 INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    details TEXT
+    description TEXT
+    price TEXT )""");
+  }
+  static Future<sql.Database> DataStore() async {
+    return sql.openDatabase('datastore', version: 2,
+        onCreate: (sql.Database db, int version) async {
+          await createDataTable(db);
+        });
+  }
+  static Future<int> AddNewData(String details, String description, String price) async {
+    final db = await SQLhelper.DataStore();
+    final data = {'details': details, 'description': description, 'price': price};
+    final id = db.insert ('data', data,conflictAlgorithm: sql.ConflictAlgorithm.replace);
+    return id;
+  }
+  static Future<List<Map>> getData()async{
+    final db=await SQLhelper.DataStore();
+    final data=db.rawQuery("SELECT * FROM data");
+    return data;
+  }
+
 }

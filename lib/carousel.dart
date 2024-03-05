@@ -29,7 +29,7 @@ class carousel extends StatelessWidget{
       enlargeCenterPage: true,
       enlargeFactor: 0.3,
       onPageChanged: callbackFunction,
-      scrollDirection: Axis.vertical,
+      scrollDirection: Axis.horizontal,
     ),),
   );
   }
