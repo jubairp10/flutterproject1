@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutterproject1/registrationdatastore/dataAdd.dart';
 
 import 'package:flutterproject1/registrationdatastore/sqlhelper.dart';
 
-
+void main(){
+  runApp(MaterialApp(home:AdminHome()));
+}
 class AdminHome extends StatefulWidget {
 
   const AdminHome({Key? key}) : super(key: key);
@@ -45,6 +48,9 @@ class _AdminHomeState extends State<AdminHome> {
               ),
             );
           }),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>dataAdd()));
+      },child:Icon(Icons.add),),
     );
   }
 }
